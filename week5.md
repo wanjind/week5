@@ -86,7 +86,7 @@
 
   - Let's break this down. First, we've defined a new variabled named `num`. This variable can be named anything you want.
   - `num` will iteratively take the value of anything included in the list that follows `in`.
-  - During each iteration, the code in between `do` and `done` will be executed. In this case, we will simply print out each of the values our variable takes, one after the other.
+  - During each iteration, the code in between `do` and `done` will be executed. In this case, we will simply print out each of the values our variable takes, one after thenano bash other.
   - To make sure you can get a for loop to work, go ahead and make a new script called `loopTest.sh` and include this for loop. Run the script and make sure it prints out each of the values you provided.
   - Sometimes you'll want to loop through a whole series of command line arguments. To loop through these arguments, you can write `$@` in place of the list in your `for` statement.
         for num in $@
