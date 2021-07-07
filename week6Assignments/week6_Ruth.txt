@@ -1,0 +1,69 @@
+1.
+
+#!/bin/bash
+
+#Add variables to count
+COUNTER=0
+sum=0
+
+#get values from command line
+for i in $@
+do 
+	#Select my number
+	if ((i<10))
+	then
+		#Count each occurrence
+		((COUNTER++))
+		
+		#Sum up the numbers
+		sum=$((sum+$i))
+	fi
+done
+echo $COUNTER
+echo $sum
+
+# DB: Good! I had intended that you'd sum up all numbers, not just those less
+#     than 10, but the directions were a bit vague. 
+
+
+2.
+
+#!/bin/bash
+
+#Add variables to count
+COUNTER=0
+sum=0
+
+#get values from file num.txt
+for i in $(<num.txt)
+do 
+	#Select my number
+	if ((i<10))
+	then
+		#Count each occurrence
+		((COUNTER++))
+		
+		#Sum up the numbers
+		sum=$((sum+$i))
+	fi
+done
+
+echo $COUNTER
+echo $sum
+
+# DB: Well done! I wasn't familiar with that syntax for reading from a file.
+
+
+3.
+
+#!/bin/bash
+
+#select only numbers on column 3 that are <10, cut 3rd column
+awk '$3>10' num.txt | cut -f 3 
+
+#select values more than 10 on column 4, cut column 4
+awk '$4<10' num.txt | cut -f 4
+
+# DB: Good idea, but this will test the values in the columns independently. I was trying
+#     to get you to think about how we might test them jointly. Also, why columns 3 and 4?
+#     In the directions, I talked about a file with two columns of numbers.
